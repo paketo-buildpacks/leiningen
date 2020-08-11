@@ -1,0 +1,21 @@
+api = "0.2"
+
+[buildpack]
+id = "eddumelendez/lein-paketo-buildpack"
+name = "Paketo Lein Buildpack"
+version = "0.0.1"
+homepage = "https://github.com/eddumelendez/lein-paketo-buildpack"
+
+[[stacks]]
+id = "io.buildpacks.stacks.bionic"
+
+[[stacks]]
+id = "org.cloudfoundry.stacks.cflinuxfs3"
+
+[[metadata.dependencies]]
+id      = "lein"
+name    = "Leiningen"
+version = "2.9.3"
+uri     = "https://github.com/technomancy/leiningen/releases/download/2.9.3/leiningen-2.9.3-standalone.zip"
+sha256  = "23e1df18bc97226d570f47335a8d543e1b759ea303544ea57d5309be3dedcbbb"
+stacks  = [ "io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3" ]
