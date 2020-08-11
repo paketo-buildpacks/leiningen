@@ -69,7 +69,7 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 		Expect(result.Layers[0].Name()).To(Equal("lein"))
 		Expect(result.Layers[1].Name()).To(Equal("cache"))
 		Expect(result.Layers[2].Name()).To(Equal("application"))
-		Expect(result.Layers[2].(libbs.Application).Command).To(Equal(filepath.Join(ctx.Layers.Path, "lein")))
+		Expect(result.Layers[2].(libbs.Application).Command).To(Equal(filepath.Join(ctx.Layers.Path, "lein", "bin", "lein")))
 	})
 }
 

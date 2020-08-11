@@ -53,7 +53,7 @@ func (b Build) Build(context libcnb.BuildContext) (libcnb.BuildResult, error) {
 		d.Logger = b.Logger
 		result.Layers = append(result.Layers, d)
 
-		command = filepath.Join(context.Layers.Path, "lein")
+		command = filepath.Join(context.Layers.Path, "lein", "bin", "lein")
 	} else if err != nil {
 		return libcnb.BuildResult{}, fmt.Errorf("unable to stat %s\n%w", command, err)
 	} else {
@@ -67,7 +67,7 @@ func (b Build) Build(context libcnb.BuildContext) (libcnb.BuildResult, error) {
 		return libcnb.BuildResult{}, fmt.Errorf("unable to determine user home directory\n%w", err)
 	}
 
-	c := libbs.Cache{Path: filepath.Join(u.HomeDir, ".m2")}
+	c := libbs.Cache{Path: filepath.Join(u.HomeDir, ".lein")}
 	c.Logger = b.Logger
 	result.Layers = append(result.Layers, c)
 

@@ -48,7 +48,7 @@ func testDistribution(t *testing.T, context spec.G, it spec.S) {
 		Expect(err).NotTo(HaveOccurred())
 
 		Expect(layer.Cache).To(BeTrue())
-		Expect(filepath.Join(layer.Path, "lein")).To(BeARegularFile())
+		Expect(filepath.Join(layer.Path, "bin", "stub-lein")).To(BeARegularFile())
 	})
 
 }
