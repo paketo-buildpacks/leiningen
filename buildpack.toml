@@ -38,7 +38,7 @@ build       = true
 [[metadata.configurations]]
 name        = "BP_LEIN_BUILT_ARTIFACT"
 description = "the built application artifact explicitly.  Supersedes $BP_LEIN_BUILT_MODULE"
-default     = "target/uberjar/*-standalone.jar"
+default     = "target/*-standalone.jar"
 build       = true
 
 [[metadata.configurations]]
