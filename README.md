@@ -1,6 +1,6 @@
-# Paketo Buildpack for Lein
+# Paketo Buildpack for Leiningen
 
-The Paketo Lein Buildpack is a Cloud Native Buildpack that builds Lein-based applications from source.
+The Paketo Leiningen Buildpack is a Cloud Native Buildpack that builds Leiningen-based applications from source.
 
 ## Behavior
 This buildpack will participate all the following conditions are met
