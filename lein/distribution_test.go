@@ -1,3 +1,19 @@
+/*
+ * Copyright 2018-2020 the original author or authors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package lein_test
 
 import (
@@ -7,10 +23,11 @@ import (
 	"testing"
 
 	"github.com/buildpacks/libcnb"
-	"github.com/eddumelendez/lein-paketo-buildpack/lein"
 	. "github.com/onsi/gomega"
 	"github.com/paketo-buildpacks/libpak"
 	"github.com/sclevine/spec"
+
+	"github.com/paketo-buildpacks/leiningen/lein"
 )
 
 func testDistribution(t *testing.T, context spec.G, it spec.S) {
@@ -36,7 +53,7 @@ func testDistribution(t *testing.T, context spec.G, it spec.S) {
 	it("contributes distribution", func() {
 		dep := libpak.BuildpackDependency{
 			URI:    "https://localhost/stub-lein",
-			SHA256: "a1ad367c13990dd91c9a34ee04b878c4256509c32038cd98440feac2dd6d5d21",
+			SHA256: "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
 		}
 		dc := libpak.DependencyCache{CachePath: "testdata"}
 
@@ -49,6 +66,10 @@ func testDistribution(t *testing.T, context spec.G, it spec.S) {
 
 		Expect(layer.Cache).To(BeTrue())
 		Expect(filepath.Join(layer.Path, "bin", "stub-lein")).To(BeARegularFile())
+
+		fi, err := os.Stat(filepath.Join(layer.Path, "bin", "stub-lein"))
+		Expect(err).NotTo(HaveOccurred())
+		Expect(fi.Mode()).To(BeEquivalentTo(0755))
 	})
 
 }

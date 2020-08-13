@@ -1,10 +1,24 @@
-api = "0.2"
+# Copyright 2018-2020 the original author or authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+api = "0.4"
 
 [buildpack]
-id = "eddumelendez/lein-paketo-buildpack"
-name = "Paketo Lein Buildpack"
-version = "0.0.1"
-homepage = "https://github.com/eddumelendez/lein-paketo-buildpack"
+id       = "paketo-buildpacks/leiningen"
+name     = "Paketo Leiningen Buildpack"
+version  = "{{.version}}"
+homepage = "https://github.com/paketo-buildpacks/leiningen"
 
 [[stacks]]
 id = "io.buildpacks.stacks.bionic"
@@ -17,14 +31,14 @@ id = "org.cloudfoundry.stacks.cflinuxfs3"
 
 [[metadata.configurations]]
 name        = "BP_LEIN_BUILD_ARGUMENTS"
-description = "the arguments to pass to Maven"
+description = "the arguments to pass to Lein"
 default     = "uberjar"
 build       = true
 
 [[metadata.configurations]]
 name        = "BP_LEIN_BUILT_ARTIFACT"
 description = "the built application artifact explicitly.  Supersedes $BP_LEIN_BUILT_MODULE"
-default     = "target/*-standalone.jar"
+default     = "target/uberjar/*-standalone.jar"
 build       = true
 
 [[metadata.configurations]]
@@ -35,10 +49,14 @@ build       = true
 [[metadata.dependencies]]
 id      = "lein"
 name    = "Leiningen"
-version = "2.9.4"
+version = "0.0.0"
 uri     = "https://raw.githubusercontent.com/technomancy/leiningen/2.9.4/bin/lein"
 sha256  = "1e21276bad56f4f8f8afd605ddf0c4d047a5244724a8dc6e13c6c55cc53b3fee"
 stacks  = [ "io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "org.cloudfoundry.stacks.cflinuxfs3" ]
+
+  [[metadata.dependencies.licenses]]
+  type = "EPL-1.0"
+  uri  = "https://github.com/technomancy/leiningen/blob/stable/COPYING"
 
 [metadata]
 pre-package   = "scripts/build.sh"

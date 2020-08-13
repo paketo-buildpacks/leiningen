@@ -17,11 +17,11 @@ The buildpack will do the following:
   * Contributes Lein to a layer with all commands on `$PATH`
   * Runs `<LEIN_ROOT>/bin/lein uberjar` to build the application
 * Removes the source code in `<APPLICATION_ROOT>`
-* Expands `<APPLICATION_ROOT>/target/*-standalone.jar` to `<APPLICATION_ROOT>`
+* Expands `<APPLICATION_ROOT>/target/uberjar/*-standalone.jar` to `<APPLICATION_ROOT>`
 
 ## Configuration
 | Environment Variable | Description
 | -------------------- | -----------
 | `$BP_LEIN_BUILD_ARGUMENTS` | Configure the arguments to pass to build system.  Defaults to `uberjar`.
 | `$BP_LEIN_BUILT_MODULE` | Configure the module to find application artifact in.  Defaults to the root module (empty).
-| `$BP_LEIN_BUILT_ARTIFACT` | Configure the built application artifact explicitly.  Supersedes `$BP_LEIN_BUILT_MODULE`  Defaults to `target/*-standalone.jar`.
+| `$BP_LEIN_BUILT_ARTIFACT` | Configure the built application artifact explicitly.  Supersedes `$BP_LEIN_BUILT_MODULE`  Defaults to `target/uberjar/*-standalone.jar`.
