@@ -53,9 +53,8 @@ func (d Distribution) Contribute(layer libcnb.Layer) (libcnb.Layer, error) {
 			return libcnb.Layer{}, fmt.Errorf("unable to chmod %s\n%w", file, err)
 		}
 
-		layer.Cache = true
 		return layer, nil
-	})
+	}, libpak.CacheLayer)
 }
 
 func (d Distribution) Name() string {
