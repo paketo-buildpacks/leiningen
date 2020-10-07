@@ -1,4 +1,4 @@
-name: Update leiningen
+name: Update lein
 "on":
     schedule:
         - cron: 30 * * * *
@@ -70,21 +70,21 @@ jobs:
                 echo "::set-output name=old-version::${OLD_VERSION}"
                 echo "::set-output name=new-version::${VERSION}"
               env:
-                ID: leiningen
+                ID: lein
                 SHA256: ${{ steps.dependency.outputs.sha256 }}
                 URI: ${{ steps.dependency.outputs.uri }}
                 VERSION: ${{ steps.dependency.outputs.version }}
                 VERSION_PATTERN: '[\d]+\.[\d]+\.[\d]+'
             - uses: peter-evans/create-pull-request@v3
               with:
-                body: Bumps `leiningen` from `${{ steps.buildpack.outputs.old-version }}` to `${{ steps.buildpack.outputs.new-version }}`.
-                branch: update/buildpack/leiningen
+                body: Bumps `lein` from `${{ steps.buildpack.outputs.old-version }}` to `${{ steps.buildpack.outputs.new-version }}`.
+                branch: update/buildpack/lein
                 commit-message: |-
-                    Bump leiningen from ${{ steps.buildpack.outputs.old-version }} to ${{ steps.buildpack.outputs.new-version }}
+                    Bump lein from ${{ steps.buildpack.outputs.old-version }} to ${{ steps.buildpack.outputs.new-version }}
 
-                    Bumps leiningen from ${{ steps.buildpack.outputs.old-version }} to ${{ steps.buildpack.outputs.new-version }}.
+                    Bumps lein from ${{ steps.buildpack.outputs.old-version }} to ${{ steps.buildpack.outputs.new-version }}.
                 delete-branch: true
                 labels: semver:minor, type:dependency-upgrade
                 signoff: true
-                title: Bump leiningen from ${{ steps.buildpack.outputs.old-version }} to ${{ steps.buildpack.outputs.new-version }}
+                title: Bump lein from ${{ steps.buildpack.outputs.old-version }} to ${{ steps.buildpack.outputs.new-version }}
                 token: ${{ secrets.GITHUB_TOKEN }}
