@@ -24,6 +24,12 @@ import (
 	"github.com/buildpacks/libcnb"
 )
 
+const (
+	PlanEntryLein                  = "lein"
+	PlanEntryJVMApplicationPackage = "jvm-application-package"
+	PlanEntryJDK                   = "jdk"
+)
+
 type Detect struct{}
 
 func (Detect) Detect(context libcnb.DetectContext) (libcnb.DetectResult, error) {
@@ -40,12 +46,12 @@ func (Detect) Detect(context libcnb.DetectContext) (libcnb.DetectResult, error) 
 		Plans: []libcnb.BuildPlan{
 			{
 				Provides: []libcnb.BuildPlanProvide{
-					{Name: "lein"},
-					{Name: "jvm-application"},
+					{Name: PlanEntryLein},
+					{Name: PlanEntryJVMApplicationPackage},
 				},
 				Requires: []libcnb.BuildPlanRequire{
-					{Name: "lein"},
-					{Name: "jdk"},
+					{Name: PlanEntryLein},
+					{Name: PlanEntryJDK},
 				},
 			},
 		},
