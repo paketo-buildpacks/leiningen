@@ -49,9 +49,9 @@ build       = true
 [[metadata.dependencies]]
 id      = "lein"
 name    = "Leiningen"
-version = "2.9.5"
-uri     = "https://raw.githubusercontent.com/technomancy/leiningen/2.9.5/bin/lein"
-sha256  = "79cc2c4aeddf829c393d31d80e6fddfd8b30cc1907a0e2f7cd73c93b300077f6"
+version = "2.9.6"
+uri     = "https://raw.githubusercontent.com/technomancy/leiningen/2.9.6/bin/lein"
+sha256  = "f9b59e199a31675ebc1323397f766fb580d78f64e134bf5c2440aa75c2d38204"
 stacks  = [ "io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "org.cloudfoundry.stacks.cflinuxfs3" ]
 
   [[metadata.dependencies.licenses]]
