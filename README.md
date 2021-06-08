@@ -25,3 +25,4 @@ The buildpack will do the following:
 | `$BP_LEIN_BUILD_ARGUMENTS` | Configure the arguments to pass to build system.  Defaults to `uberjar`.
 | `$BP_LEIN_BUILT_MODULE` | Configure the module to find application artifact in.  Defaults to the root module (empty).
 | `$BP_LEIN_BUILT_ARTIFACT` | Configure the built application artifact explicitly.  Supersedes `$BP_LEIN_BUILT_MODULE`  Defaults to `target/*-standalone.jar`.
+
