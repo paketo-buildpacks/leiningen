@@ -33,7 +33,7 @@ id = "io.buildpacks.stacks.bionic"
 id = "io.paketo.stacks.tiny"
 
 [[stacks]]
-id = "org.cloudfoundry.stacks.cflinuxfs3"
+id = "*"
 
 [[metadata.configurations]]
 name        = "BP_LEIN_BUILD_ARGUMENTS"
@@ -58,7 +58,7 @@ name    = "Leiningen"
 version = "2.9.6"
 uri     = "https://raw.githubusercontent.com/technomancy/leiningen/2.9.6/bin/lein"
 sha256  = "f9b59e199a31675ebc1323397f766fb580d78f64e134bf5c2440aa75c2d38204"
-stacks  = [ "io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "org.cloudfoundry.stacks.cflinuxfs3" ]
+stacks  = [ "io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*" ]
 
   [[metadata.dependencies.licenses]]
   type = "EPL-1.0"
