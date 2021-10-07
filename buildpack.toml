@@ -15,63 +15,55 @@
 api = "0.6"
 
 [buildpack]
-id       = "paketo-buildpacks/leiningen"
-name     = "Paketo Leiningen Buildpack"
-version  = "{{.version}}"
-homepage = "https://github.com/paketo-buildpacks/leiningen"
-description = "A Cloud Native Buildpack that builds Leiningen-based applications from source"
-keywords    = ["java", "leiningen", "build-system"]
+  description = "A Cloud Native Buildpack that builds Leiningen-based applications from source"
+  homepage = "https://github.com/paketo-buildpacks/leiningen"
+  id = "paketo-buildpacks/leiningen"
+  keywords = ["java", "leiningen", "build-system"]
+  name = "Paketo Leiningen Buildpack"
+  version = "{{.version}}"
 
-[[buildpack.licenses]]
-type = "Apache-2.0"
-uri  = "https://github.com/paketo-buildpacks/leiningen/blob/main/LICENSE"
-
-[[stacks]]
-id = "io.buildpacks.stacks.bionic"
-
-[[stacks]]
-id = "io.paketo.stacks.tiny"
-
-[[stacks]]
-id = "*"
-
-[[metadata.configurations]]
-name        = "BP_LEIN_BUILD_ARGUMENTS"
-description = "the arguments to pass to Lein"
-default     = "uberjar"
-build       = true
-
-[[metadata.configurations]]
-name        = "BP_LEIN_BUILT_ARTIFACT"
-description = "the built application artifact explicitly.  Supersedes $BP_LEIN_BUILT_MODULE"
-default     = "target/*-standalone.jar"
-build       = true
-
-[[metadata.configurations]]
-name        = "BP_LEIN_BUILT_MODULE"
-description = "the module to find application artifact in"
-build       = true
-
-[[metadata.dependencies]]
-id      = "lein"
-name    = "Leiningen"
-version = "2.9.7"
-uri     = "https://raw.githubusercontent.com/technomancy/leiningen/2.9.7/bin/lein"
-sha256  = "913f072ada1fc452c7f9e4cb3dc8eaf17d244ebdaf370e114c728483d4017a12"
-stacks  = [ "io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*" ]
-
-  [[metadata.dependencies.licenses]]
-  type = "EPL-1.0"
-  uri  = "https://github.com/technomancy/leiningen/blob/stable/COPYING"
+  [[buildpack.licenses]]
+    type = "Apache-2.0"
+    uri = "https://github.com/paketo-buildpacks/leiningen/blob/main/LICENSE"
 
 [metadata]
-pre-package   = "scripts/build.sh"
-include-files = [
-  "LICENSE",
-  "NOTICE",
-  "README.md",
-  "bin/build",
-  "bin/detect",
-  "bin/main",
-  "buildpack.toml",
-]
+  include-files = ["LICENSE", "NOTICE", "README.md", "bin/build", "bin/detect", "bin/main", "buildpack.toml"]
+  pre-package = "scripts/build.sh"
+
+  [[metadata.configurations]]
+    build = true
+    default = "uberjar"
+    description = "the arguments to pass to Lein"
+    name = "BP_LEIN_BUILD_ARGUMENTS"
+
+  [[metadata.configurations]]
+    build = true
+    default = "target/*-standalone.jar"
+    description = "the built application artifact explicitly.  Supersedes $BP_LEIN_BUILT_MODULE"
+    name = "BP_LEIN_BUILT_ARTIFACT"
+
+  [[metadata.configurations]]
+    build = true
+    description = "the module to find application artifact in"
+    name = "BP_LEIN_BUILT_MODULE"
+
+  [[metadata.dependencies]]
+    id = "lein"
+    name = "Leiningen"
+    sha256 = "913f072ada1fc452c7f9e4cb3dc8eaf17d244ebdaf370e114c728483d4017a12"
+    stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
+    uri = "https://raw.githubusercontent.com/technomancy/leiningen/2.9.7/bin/lein"
+    version = "2.9.7"
+
+    [[metadata.dependencies.licenses]]
+      type = "EPL-1.0"
+      uri = "https://github.com/technomancy/leiningen/blob/stable/COPYING"
+
+[[stacks]]
+  id = "io.buildpacks.stacks.bionic"
+
+[[stacks]]
+  id = "io.paketo.stacks.tiny"
+
+[[stacks]]
+  id = "*"
