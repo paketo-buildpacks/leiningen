@@ -45,8 +45,8 @@ jobs:
               uses: docker://ghcr.io/paketo-buildpacks/actions/leiningen-dependency:main
               with:
                 token: ${{ secrets.JAVA_GITHUB_TOKEN }}
-            - id: buildpack
-              name: Update Buildpack Dependency
+            - name: Update Buildpack Dependency
+              id: buildpack
               run: |
                 #!/usr/bin/env bash
 
