@@ -50,10 +50,10 @@ api = "0.6"
   [[metadata.dependencies]]
     id = "lein"
     name = "Leiningen"
-    sha256 = "913f072ada1fc452c7f9e4cb3dc8eaf17d244ebdaf370e114c728483d4017a12"
+    sha256 = "54912fd6d11976a0163f85a45424dd504d1d0c263c56875d7f37e55bc8feff5c"
     stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
-    uri = "https://raw.githubusercontent.com/technomancy/leiningen/2.9.7/bin/lein"
-    version = "2.9.7"
+    uri = "https://raw.githubusercontent.com/technomancy/leiningen/2.9.8/bin/lein"
+    version = "2.9.8"
 
     [[metadata.dependencies.licenses]]
       type = "EPL-1.0"
