@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api = "0.6"
+api = "0.7"
 
 [buildpack]
   description = "A Cloud Native Buildpack that builds Leiningen-based applications from source"
@@ -21,6 +21,7 @@ api = "0.6"
   keywords = ["java", "leiningen", "build-system"]
   name = "Paketo Leiningen Buildpack"
   version = "{{.version}}"
+  sbom-formats = ["application/vnd.cyclonedx+json", "application/vnd.syft+json"]
 
   [[buildpack.licenses]]
     type = "Apache-2.0"
@@ -54,6 +55,10 @@ api = "0.6"
     stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
     uri = "https://raw.githubusercontent.com/technomancy/leiningen/2.9.8/bin/lein"
     version = "2.9.8"
+    purl = "pkg:generic/leiningen@2.9.8"
+    cpes = [
+      "cpe:2.3:a:leiningen:leiningen:2.9.8:*:*:*:*:*:*:*"
+    ]
 
     [[metadata.dependencies.licenses]]
       type = "EPL-1.0"
