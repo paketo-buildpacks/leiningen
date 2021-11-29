@@ -20,8 +20,8 @@ api = "0.7"
   id = "paketo-buildpacks/leiningen"
   keywords = ["java", "leiningen", "build-system"]
   name = "Paketo Leiningen Buildpack"
-  version = "{{.version}}"
   sbom-formats = ["application/vnd.cyclonedx+json", "application/vnd.syft+json"]
+  version = "{{.version}}"
 
   [[buildpack.licenses]]
     type = "Apache-2.0"
@@ -49,16 +49,14 @@ api = "0.7"
     name = "BP_LEIN_BUILT_MODULE"
 
   [[metadata.dependencies]]
+    cpes = ["cpe:2.3:a:leiningen:leiningen:2.9.8:*:*:*:*:*:*:*"]
     id = "lein"
     name = "Leiningen"
+    purl = "pkg:generic/leiningen@2.9.8"
     sha256 = "54912fd6d11976a0163f85a45424dd504d1d0c263c56875d7f37e55bc8feff5c"
     stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
     uri = "https://raw.githubusercontent.com/technomancy/leiningen/2.9.8/bin/lein"
     version = "2.9.8"
-    purl = "pkg:generic/leiningen@2.9.8"
-    cpes = [
-      "cpe:2.3:a:leiningen:leiningen:2.9.8:*:*:*:*:*:*:*"
-    ]
 
     [[metadata.dependencies.licenses]]
       type = "EPL-1.0"
