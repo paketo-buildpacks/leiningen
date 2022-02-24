@@ -27,7 +27,7 @@ import (
 	"github.com/paketo-buildpacks/libpak"
 	"github.com/sclevine/spec"
 
-	"github.com/paketo-buildpacks/leiningen/lein"
+	"github.com/paketo-buildpacks/leiningen/v2/lein"
 )
 
 func testDistribution(t *testing.T, context spec.G, it spec.S) {

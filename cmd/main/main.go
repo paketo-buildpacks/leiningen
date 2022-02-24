@@ -23,7 +23,7 @@ import (
 	"github.com/paketo-buildpacks/libpak"
 	"github.com/paketo-buildpacks/libpak/bard"
 
-	"github.com/paketo-buildpacks/leiningen/lein"
+	"github.com/paketo-buildpacks/leiningen/v2/lein"
 )
 
 func main() {
