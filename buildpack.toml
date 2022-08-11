@@ -49,14 +49,14 @@ api = "0.7"
     name = "BP_LEIN_BUILT_MODULE"
 
   [[metadata.dependencies]]
-    cpes = ["cpe:2.3:a:leiningen:leiningen:2.9.9:*:*:*:*:*:*:*"]
+    cpes = ["cpe:2.3:a:leiningen:leiningen:2.9.10:*:*:*:*:*:*:*"]
     id = "lein"
     name = "Leiningen"
-    purl = "pkg:generic/leiningen@2.9.9"
-    sha256 = "e1335fcaeb1203cb610098cb6f7eb0af305b12bb1aed3e23a368982e251561f3"
+    purl = "pkg:generic/leiningen@2.9.10"
+    sha256 = "bf30ef45439faa1abe5024152603e011bd186781f3c67faf389feea5a1286dc8"
     stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
-    uri = "https://raw.githubusercontent.com/technomancy/leiningen/2.9.9/bin/lein"
-    version = "2.9.9"
+    uri = "https://raw.githubusercontent.com/technomancy/leiningen/2.9.10/bin/lein"
+    version = "2.9.10"
 
     [[metadata.dependencies.licenses]]
       type = "EPL-1.0"
