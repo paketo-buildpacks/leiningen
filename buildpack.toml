@@ -19,7 +19,7 @@ api = "0.7"
   homepage = "https://github.com/paketo-buildpacks/leiningen"
   id = "paketo-buildpacks/leiningen"
   keywords = ["java", "leiningen", "build-system"]
-  name = "Paketo Leiningen Buildpack"
+  name = "Paketo Buildpack for Leiningen"
   sbom-formats = ["application/vnd.cyclonedx+json", "application/vnd.syft+json"]
   version = "{{.version}}"
 
