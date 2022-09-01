@@ -3,7 +3,7 @@ module github.com/paketo-buildpacks/leiningen/v2
 go 1.18
 
 require (
-	github.com/buildpacks/libcnb v1.26.0
+	github.com/buildpacks/libcnb v1.27.0
 	github.com/onsi/gomega v1.20.2
 	github.com/paketo-buildpacks/libbs v1.15.0
 	github.com/paketo-buildpacks/libpak v1.61.0
