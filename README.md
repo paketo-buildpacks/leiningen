@@ -17,7 +17,7 @@ The buildpack will do the following:
 * If `<APPLICATION_ROOT>/lein` does not exist
   * Contributes Lein to a layer with all commands on `$PATH`
   * Runs `<LEIN_ROOT>/bin/lein uberjar` to build the application
-* Removes the source code in `<APPLICATION_ROOT>`
+* Removes the source code in `<APPLICATION_ROOT>`, following include/exclude rules
 * If `$BP_LEIN_BUILT_ARTIFACT` matched a single file
   * Restores `$BP_LEIN_BUILT_ARTIFACT` from the layer, expands the single file to `<APPLICATION_ROOT>`
 * If `$BP_LEIN_BUILT_ARTIFACT` matched a directory or multiple files
@@ -30,6 +30,8 @@ The buildpack will do the following:
 | `$BP_LEIN_BUILD_ARGUMENTS` | Configure the arguments to pass to build system. Defaults to `uberjar`.                                                                                                                                                              |
 | `$BP_LEIN_BUILT_MODULE`    | Configure the module to find application artifact in. Defaults to the root module (empty).                                                                                                                                           |
 | `$BP_LEIN_BUILT_ARTIFACT`  | Configure the built application artifact explicitly. Supersedes `$BP_LEIN_BUILT_MODULE`. Defaults to `target/*-standalone.jar`. Can match a single file, multiple files or a directory. Can be one or more space separated patterns. |
+| `$BP_INCLUDE_FILES`         | Colon separated list of glob patterns to match source files. Any matched file will be retained in the final image. Defaults to `` (i.e. nothing).                                                                                               |
+| `$BP_EXCLUDE_FILES`         | Colon separated list of glob patterns to match source files. Any matched file will be specifically removed from the final image. If include patterns are also specified, then they are applied first and exclude patterns can be used to further reduce the fileset. |
 
 ## Bindings
 
@@ -46,3 +48,4 @@ The buildpack optionally accepts the following bindings:
 This buildpack is released under version 2.0 of the [Apache License][a].
 
 [a]: http://www.apache.org/licenses/LICENSE-2.0
+
