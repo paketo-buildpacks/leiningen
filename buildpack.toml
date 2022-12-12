@@ -61,14 +61,14 @@ api = "0.7"
     name = "BP_EXCLUDE_FILES"
 
   [[metadata.dependencies]]
-    cpes = ["cpe:2.3:a:leiningen:leiningen:2.9.10:*:*:*:*:*:*:*"]
+    cpes = ["cpe:2.3:a:leiningen:leiningen:2.10.0:*:*:*:*:*:*:*"]
     id = "lein"
     name = "Leiningen"
-    purl = "pkg:generic/leiningen@2.9.10"
-    sha256 = "bf30ef45439faa1abe5024152603e011bd186781f3c67faf389feea5a1286dc8"
+    purl = "pkg:generic/leiningen@2.10.0"
+    sha256 = "20ad1fb2de2866e18a9cce9985807936baee51bbbcdd46f240560c7d5551fc8d"
     stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
-    uri = "https://raw.githubusercontent.com/technomancy/leiningen/2.9.10/bin/lein"
-    version = "2.9.10"
+    uri = "https://raw.githubusercontent.com/technomancy/leiningen/2.10.0/bin/lein"
+    version = "2.10.0"
 
     [[metadata.dependencies.licenses]]
       type = "EPL-1.0"
