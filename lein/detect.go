@@ -18,6 +18,7 @@ package lein
 
 import (
 	"fmt"
+	"github.com/paketo-buildpacks/libpak/bard"
 	"os"
 	"path/filepath"
 
@@ -34,9 +35,11 @@ const (
 type Detect struct{}
 
 func (Detect) Detect(context libcnb.DetectContext) (libcnb.DetectResult, error) {
+	l := bard.NewLogger(os.Stdout)
 	file := filepath.Join(context.Application.Path, "project.clj")
 	_, err := os.Stat(file)
 	if os.IsNotExist(err) {
+		l.Logger.Infof("SKIPPED: project.clj could not be found in %s", file)
 		return libcnb.DetectResult{Pass: false}, nil
 	} else if err != nil {
 		return libcnb.DetectResult{}, fmt.Errorf("unable to determine if %s exists\n%w", file, err)
