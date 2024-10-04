@@ -17,7 +17,6 @@
 package lein_test
 
 import (
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"testing"
@@ -43,12 +42,14 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 	it.Before(func() {
 		var err error
 
-		ctx.Application.Path, err = ioutil.TempDir("", "build-application")
+		ctx.Application.Path, err = os.MkdirTemp("", "build-application")
 		Expect(err).NotTo(HaveOccurred())
 
-		ctx.Layers.Path, err = ioutil.TempDir("", "build-layers")
+		ctx.Layers.Path, err = os.MkdirTemp("", "build-layers")
 		Expect(err).NotTo(HaveOccurred())
 		leinBuild = lein.Build{ApplicationFactory: &FakeApplicationFactory{}}
+
+		t.Setenv("BP_ARCH", "amd64")
 	})
 
 	it.After(func() {
@@ -57,7 +58,7 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 	})
 
 	it("does not contribute distribution if wrapper exists", func() {
-		Expect(ioutil.WriteFile(filepath.Join(ctx.Application.Path, "lein"), []byte{}, 0644)).To(Succeed())
+		Expect(os.WriteFile(filepath.Join(ctx.Application.Path, "lein"), []byte{}, 0644)).To(Succeed())
 		ctx.StackID = "test-stack-id"
 
 		result, err := leinBuild.Build(ctx)
