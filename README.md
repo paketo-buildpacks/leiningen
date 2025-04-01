@@ -1,5 +1,8 @@
 # Paketo Buildpack for Leiningen
 
+## Buildpack ID: `paketo-buildpacks/leiningen`
+## Registry URLs: `docker.io/paketobuildpacks/leiningen`
+
 The Paketo Buildpack for Leiningen is a Cloud Native Buildpack that builds Leiningen-based applications from source.
 
 ## Behavior
