@@ -61,16 +61,16 @@ api = "0.7"
     name = "BP_EXCLUDE_FILES"
 
   [[metadata.dependencies]]
-    cpes = ["cpe:2.3:a:leiningen:leiningen:2.12.0:*:*:*:*:*:*:*"]
+    cpes = ["cpe:2.3:a:leiningen:leiningen:2.13.0:*:*:*:*:*:*:*"]
     id = "lein"
     name = "Leiningen"
-    purl = "pkg:generic/leiningen@2.12.0"
-    sha256 = "f8e1266c0c78c08bd4af6e111889ecc316c9dd56d1e8645bbee6c1703d351bc3"
-    source = "https://github.com/technomancy/leiningen/archive/refs/tags/2.12.0.tar.gz"
-    source-sha256 = "a190d92325b552621b1709a42a2cb78c74ffd795269f48e7619031e1127ad542"
+    purl = "pkg:generic/leiningen@2.13.0"
+    sha256 = "61cf3a0786748238bc7d78e24b77a875d8c4c0704c3bc11f7180e979b46bcc2c"
+    source = "https://github.com/technomancy/leiningen/archive/refs/tags/2.13.0.tar.gz"
+    source-sha256 = "a71aaf44eaf7796198943bd6db7662c99664bb6441f8dc7216d4a87fa4ea4dad"
     stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
-    uri = "https://raw.githubusercontent.com/technomancy/leiningen/2.12.0/bin/lein"
-    version = "2.12.0"
+    uri = "https://raw.githubusercontent.com/technomancy/leiningen/2.13.0/bin/lein"
+    version = "2.13.0"
 
     [[metadata.dependencies.licenses]]
       type = "EPL-1.0"
