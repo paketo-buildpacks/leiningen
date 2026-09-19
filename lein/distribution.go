@@ -32,8 +32,8 @@ type Distribution struct {
 	Logger           bard.Logger
 }
 
-func NewDistribution(dependency libpak.BuildpackDependency, cache libpak.DependencyCache) (Distribution, libcnb.BOMEntry) {
-	contributor, entry := libpak.NewDependencyLayer(dependency, cache, libcnb.LayerTypes{
+func NewDistribution(dependency libpak.BuildpackDependency, cache libpak.DependencyCache) (Distribution, libcnb.BOMEntry) { //nolint:staticcheck
+	contributor, entry := libpak.NewDependencyLayer(dependency, cache, libcnb.LayerTypes{ //nolint:staticcheck
 		Cache: true,
 	})
 	return Distribution{
