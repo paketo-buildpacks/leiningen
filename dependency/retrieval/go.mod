@@ -1,6 +1,6 @@
 module github.com/paketo-buildpacks/leiningen/v2/dependency/retrieval
 
-go 1.27
+go 1.27.1
 
 require (
 	github.com/paketo-buildpacks/libdependency v0.2.1
