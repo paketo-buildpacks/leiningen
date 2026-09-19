@@ -38,7 +38,7 @@ type Build struct {
 
 type ApplicationFactory interface {
 	NewApplication(additionalMetadata map[string]interface{}, arguments []string, artifactResolver libbs.ArtifactResolver,
-		cache libbs.Cache, command string, bom *libcnb.BOM, applicationPath string, sBOMScanner sbom.SBOMScanner) (libbs.Application, error)
+		cache libbs.Cache, command string, bom *libcnb.BOM, applicationPath string, sBOMScanner sbom.SBOMScanner) (libbs.Application, error) //nolint:staticcheck
 }
 
 func (b Build) Build(context libcnb.BuildContext) (libcnb.BuildResult, error) {
@@ -71,7 +71,7 @@ func (b Build) Build(context libcnb.BuildContext) (libcnb.BuildResult, error) {
 		d, be := NewDistribution(dep, dc)
 		d.Logger = b.Logger
 		result.Layers = append(result.Layers, d)
-		result.BOM.Entries = append(result.BOM.Entries, be)
+		result.BOM.Entries = append(result.BOM.Entries, be) //nolint:staticcheck
 		command = filepath.Join(context.Layers.Path, d.Name(), "bin", "lein")
 	} else if err != nil {
 		return libcnb.BuildResult{}, fmt.Errorf("unable to stat %s\n%w", command, err)
@@ -110,7 +110,7 @@ func (b Build) Build(context libcnb.BuildContext) (libcnb.BuildResult, error) {
 		art,
 		c,
 		command,
-		result.BOM,
+		result.BOM, //nolint:staticcheck
 		context.Application.Path,
 		sbomScanner,
 	)
