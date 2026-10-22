@@ -4,7 +4,7 @@ go 1.27.2
 
 require (
 	github.com/paketo-buildpacks/libdependency v0.2.1
-	github.com/paketo-buildpacks/packit/v2 v2.25.7
+	github.com/paketo-buildpacks/packit/v2 v2.25.8
 )
 
 require (
