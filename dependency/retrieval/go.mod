@@ -3,7 +3,7 @@ module github.com/paketo-buildpacks/leiningen/v2/dependency/retrieval
 go 1.27.4
 
 require (
-	github.com/paketo-buildpacks/libdependency v0.2.1
+	github.com/paketo-buildpacks/libdependency v0.2.2
 	github.com/paketo-buildpacks/packit/v2 v2.26.0
 )
 
